@@ -1,0 +1,295 @@
+@banner-height: 65px;
+@header-color: #0067c5;
+@font-top-size: 24px;
+@font-top-size-mobile: 20px;
+@font-bottom-size: 20px;
+@font-bottom-size-mobile: 16px;
+@font-bottom-color: #1ec1fc;
+@pizza-img-height: 240px;
+@pizza-img-height-mobile: 140px;
+@pizza-img-width: 240px;
+@pizza-img-width-mobile: 140px;
+@banner-bg-color: #fff;
+@primary-color: #609dff;
+@footer-bg-color: #7a7f87;
+@nav-bg-color: #1d62d1;
+@primary-font: "Segoe UI";
+@primary-font-bold: "Segoe UI Bold";
+@primary-font-semibold: "Segoe UI Semibold";
+
+
+body{
+    background-color: #E4E4E4 ;
+}
+
+/*Banner Started*/
+
+
+.banner{
+    height: @banner-height;
+    width: 100%;
+    display: block;
+    background-color: @banner-bg-color;
+    left: 0;
+    top: 0;
+
+    .logo{
+        display: inline-block;
+
+    }
+
+    // #logo-img{
+    //     height: @banner-height;
+    //     width: 250px;
+    // }
+  }
+
+
+    .banner-right{
+        display: inline-block;
+        width: auto;
+        height: @banner-height;
+        padding: 5px 2px;
+
+        #cart-img{
+            height: 35px;
+            width: 35px;
+        }
+
+        #person-img{
+            height: 35px;
+            width: 35px;
+            border: 3px solid @header-color;
+            border-radius: 50%;
+        }
+
+    }
+    .text-block{
+      margin: 0px;
+      padding: 0px;
+      span{
+        color: #0067c5;
+      }
+    }
+.btn-default{
+  border: none;
+
+  &:hover{
+    background-color: #fff;
+  }
+}
+
+.dropdown-menu{
+  z-index: 1001;
+}
+
+@media only screen and (max-width: 768px) {
+  #text-block{
+    display: none;
+  }
+  .banner-right{
+    padding-top: 15px;
+    #cart-img{
+        height: 30px;
+        width: 30px;
+    }
+
+    #person-img{
+        height: 30px;
+        width: 30px;
+        border: 2px solid @header-color;
+
+    }
+  }
+
+}
+/*Banner Ended*/
+
+/*Navigation Started*/
+
+.navbar{
+background-color: @nav-bg-color ;
+left: 0;
+height: 50px;
+
+}
+
+.navbar-nav>li>a{
+  line-height: 0px;
+  // font-family: @primary-font-bold;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #02b0e5;
+  &:visited{
+    color: #02b0e5;
+  }
+}
+.navbar-default .navbar-nav>li>a.active{
+  color: #fff;
+  border-bottom: 4px solid #fff;
+}
+.navbar-default .navbar-nav>li>a:hover{
+  color: #fff;
+  border-bottom: 4px solid #fff;
+}
+
+.navbar-nav>li{
+  font-size: 18px ;
+  // font-family: @primary-font-bold ;
+  color: #fff ;
+  text-transform: uppercase ;
+
+
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+  height: 3px;
+}
+
+.navbar-default .navbar-collapse{
+  background-color: @nav-bg-color;
+}
+
+.navbar-default .navbar-toggle {
+  border: none;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle {
+  background: none;
+  border: none;
+}
+
+@media only screen and (min-width: 1100px) {
+  li{
+    padding-left: 35px ;
+    padding-right: 35px ;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 989px) {
+  li{
+    padding-left: 5px ;
+    padding-right: 5px ;
+    font-size: 15px ;
+  }
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1099px) {
+  li{
+    padding-left: 15px ;
+    padding-right: 15px ;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-default .navbar-nav>li>a.active{
+    color: #fff;
+    border: none;
+  }
+  .navbar-default .navbar-nav>li>a:hover{
+    color: #fff;
+    border-bottom: none;
+  }
+  .navbar-default .navbar-nav>li>a{
+    color: #fff;
+  }
+  .navbar-nav>li>a{
+    line-height: 1;
+  }
+}
+
+
+/*Navigation Ended*/
+
+
+// Content Started
+
+.content{
+  margin-top: 30px;
+  height: auto;
+  width: auto;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  img{
+    height: @pizza-img-height;
+    width: @pizza-img-width;
+    border: 5px solid @nav-bg-color;
+    border-radius: 50%;
+  }
+}
+
+.toptext{
+  font-size: @font-top-size;
+  line-height: 2.5em;
+  color: #1d7fad;
+  span{
+    color: @footer-bg-color;
+  }
+}
+
+.bottomtext{
+  font-size: @font-bottom-size;
+  padding-top: 10px;
+  color: @font-bottom-color;
+}
+
+// Content size change for mobile
+
+@media screen and (max-width:768px) {
+  .toptext{
+    font-size: @font-top-size-mobile;
+    line-height: 1.5em;
+    color: @primary-color;
+  }
+  .content img{
+    height: @pizza-img-height-mobile;
+    width: @pizza-img-width-mobile;
+    border: 5px solid @nav-bg-color;
+    border-radius: 50%;
+  }
+  .bottomtext{
+    font-size: @font-bottom-size-mobile;
+    padding-top: 10px;
+    color: @font-bottom-color;
+  }
+
+}
+@media screen and (min-width:769px){
+  #order-no{
+    display: inline-block;
+  }
+}
+// Content Ended
+
+// Footer Started
+
+footer{
+position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #828282;
+  color: #c6c6c6;
+  text-align: center;
+  height: auto;
+  width: auto;
+  padding: 1.5rem;
+  margin-top: 50px;
+  font-size: 14px;
+}
+@media only screen and (max-width: 768px) {
+  footer{
+padding: 0.6rem;
+font-size: 12px;
+}
+}
+@media only screen and (min-height: 640px) and (max-width: 1024px) {
+  footer{
+position: absolute;
+}
+
+}
+
+// Footer Ended

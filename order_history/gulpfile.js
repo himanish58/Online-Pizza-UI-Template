@@ -1,0 +1,33 @@
+const gulp = require('gulp');
+const less = require('gulp-less');
+const cleanCSS = require('gulp-clean-css');
+const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify');
+
+
+
+gulp.task('less', function() {
+  gulp.src('src/less/*.less')
+  .pipe(less())
+  .pipe(cleanCSS())
+  .pipe(gulp.dest('src/css'));
+});
+
+gulp.task('imagemin', function() {
+  gulp.src('src/images/*')
+  .pipe(imagemin())
+  .pipe(gulp.dest('build/images'));
+});
+
+gulp.task('uglify', function () {
+  gulp.src('src/js/*.js')
+  .pipe(uglify())
+  .pipe(gulp.dest('build/js'))
+});
+
+
+gulp.task('default', ['less', 'imagemin', 'uglify']);
+
+gulp.task('watch', function(){
+  gulp.watch('src/less/*.less', ['less'])
+});
